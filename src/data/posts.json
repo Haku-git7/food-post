@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "account": "sweets",
+    "category": "convenience",
+    "chainName": "セブン-イレブン",
+    "productName": "北海道産いちごのショートケーキ",
+    "imageUrl": "https://picsum.photos/seed/strawberry-cake/600/360",
+    "tweetText": "5月27日より【セブン-イレブン】から、コンビニスイーツの『北海道産いちごのショートケーキ』が新発売されます✨",
+    "features": "北海道産完熟いちご使用、ふわふわスポンジと濃厚生クリームの絶妙なハーモニー、498円",
+    "releaseDate": "2026-05-27",
+    "sourceUrl": "https://www.sej.co.jp/products/a/cat/010020/"
+  },
+  {
+    "id": "2",
+    "account": "sweets",
+    "category": "cafe",
+    "chainName": "スターバックス",
+    "productName": "マンゴーパッションティーフラペチーノ",
+    "imageUrl": "https://picsum.photos/seed/mango-frappuccino/600/360",
+    "tweetText": "6月1日より【スターバックス】から、夏限定ドリンクの『マンゴーパッションティーフラペチーノ』が新発売されます✨",
+    "features": "甘酸っぱいマンゴーと爽やかなパッションティーのトロピカルブレンド、Tall 680円〜、夏季限定",
+    "releaseDate": "2026-06-01",
+    "sourceUrl": "https://www.starbucks.co.jp/beverage/frappuccino/"
+  },
+  {
+    "id": "3",
+    "account": "sweets",
+    "category": "convenience",
+    "chainName": "ローソン",
+    "productName": "Uchi Café 濃厚ベルギーショコラプリン",
+    "imageUrl": "https://picsum.photos/seed/chocolate-pudding/600/360",
+    "tweetText": "5月28日より【ローソン】から、コンビニスイーツの『Uchi Café 濃厚ベルギーショコラプリン』が新発売されます✨",
+    "features": "ベルギー産高級チョコレート使用、なめらかで濃厚な口どけ、298円",
+    "releaseDate": "2026-05-28",
+    "sourceUrl": "https://www.lawson.co.jp/recommend/original/"
+  },
+  {
+    "id": "4",
+    "account": "gourmet",
+    "category": "gourmet",
+    "chainName": "マクドナルド",
+    "productName": "テキサスバーガー 復刻版",
+    "imageUrl": "https://picsum.photos/seed/texas-burger/600/360",
+    "tweetText": "6月5日より【マクドナルド】から、期間限定バーガーの『テキサスバーガー 復刻版』が新発売されます✨",
+    "features": "ジューシーなビーフパティ×スモーキーBBQソース、懐かしの味を期間限定で復活、690円",
+    "releaseDate": "2026-06-05",
+    "sourceUrl": "https://www.mcdonalds.co.jp/campaign/texas/"
+  },
+  {
+    "id": "5",
+    "account": "gourmet",
+    "category": "gourmet",
+    "chainName": "モスバーガー",
+    "productName": "夏野菜モスバーガー",
+    "imageUrl": "https://picsum.photos/seed/moss-burger/600/360",
+    "tweetText": "6月10日より【モスバーガー】から、夏季限定バーガーの『夏野菜モスバーガー』が新発売されます✨",
+    "features": "旬の夏野菜たっぷりのヘルシーバーガー、彩り豊かで爽やか、夏季限定",
+    "releaseDate": "2026-06-10",
+    "sourceUrl": "https://www.mos.co.jp/menu/"
+  }
+]

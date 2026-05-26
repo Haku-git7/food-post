@@ -1,0 +1,19 @@
+{
+  "name": "スイーツPost管理",
+  "short_name": "スイーツPost",
+  "description": "コンビニ・チェーン店の新発売スイーツ情報をXに投稿するための管理アプリ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

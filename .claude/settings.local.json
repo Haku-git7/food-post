@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(npx next *)",
+      "Skill(claude-api)",
+      "Bash(npm install *)",
+      "Bash(New-Item -ItemType Directory -Path \"C:\\\\food-post\\\\src\\\\app\\\\api\\\\generate-tweet\" -Force)",
+      "Bash(npm run *)",
+      "Bash(taskkill *)",
+      "PowerShell(Stop-Process *)"
+    ]
+  }
+}
