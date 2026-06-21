@@ -1,0 +1,63 @@
+name: ねこポスト 自動投稿
+
+on:
+  schedule:
+    # UTC指定。12:00 JST = 03:00 UTC / 19:00 JST = 10:00 UTC（1日2回・各アカウント1投稿＝計4投稿/日）
+    # 投稿頻度を変えたいときはこの cron を編集（例: 1日1回なら片方を削除）
+    - cron: "0 3 * * *"
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "DRY RUN（実投稿せず、文面生成だけ確認する）"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write # state.json を commit し戻すため
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    # 手動実行は既定でDRY RUN（安全）。スケジュール実行は常に本番投稿。
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+      # 運用アカウント。グルメを始めるときは "sweets,gourmet" に変更
+      ENABLED_ACCOUNTS: sweets
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install bot deps
+        working-directory: bot
+        run: npm install
+
+      - name: Run auto-post
+        working-directory: bot
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_SWEETS_APP_KEY: ${{ secrets.X_SWEETS_APP_KEY }}
+          X_SWEETS_APP_SECRET: ${{ secrets.X_SWEETS_APP_SECRET }}
+          X_SWEETS_ACCESS_TOKEN: ${{ secrets.X_SWEETS_ACCESS_TOKEN }}
+          X_SWEETS_ACCESS_SECRET: ${{ secrets.X_SWEETS_ACCESS_SECRET }}
+          X_GOURMET_APP_KEY: ${{ secrets.X_GOURMET_APP_KEY }}
+          X_GOURMET_APP_SECRET: ${{ secrets.X_GOURMET_APP_SECRET }}
+          X_GOURMET_ACCESS_TOKEN: ${{ secrets.X_GOURMET_ACCESS_TOKEN }}
+          X_GOURMET_ACCESS_SECRET: ${{ secrets.X_GOURMET_ACCESS_SECRET }}
+        run: node run.mjs
+
+      - name: Commit posted state
+        if: env.DRY_RUN != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add bot/state.json
+          if git diff --staged --quiet; then
+            echo "state変更なし"
+          else
+            git commit -m "chore: 投稿済みstateを更新 [skip ci]"
+            git push
+          fi

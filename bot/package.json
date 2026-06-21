@@ -1,0 +1,14 @@
+{
+  "name": "nekopost-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ねこポスト 自動投稿bot（Phase 1: 文章+写真・リンクなし）",
+  "scripts": {
+    "post": "node run.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.98.0",
+    "twitter-api-v2": "^1.18.0"
+  }
+}
